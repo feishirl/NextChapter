@@ -20,7 +20,7 @@ export default function Discover() {
 
   const activeFilters = [ui.format, ui.city, ui.level].filter(x => x !== 'All').length + (ui.kidOnly ? 1 : 0)
   const filtering = q || ui.cat !== 'All' || activeFilters
-  const featured = S.events.find(e => e.id === (me === 'yuri' ? 'e1' : 'e7'))
+  const featured = S.events.find(e => e.id === (me === 'shirley' ? 'e1' : 'e7'))
   const hour = new Date().getHours()
   const greet = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening'
 
@@ -33,7 +33,7 @@ export default function Discover() {
       <div className="topbar">
         <div><div className="muted" style={{ fontSize: 13 }}>{greet},</div><h2>{firstName(me)} 👋</h2></div>
         <div style={{ display: 'flex', gap: 8 }}>
-          <button className="iconbtn" onClick={() => toast('🔔', 'Pauline posted a new event', 'Leadership Circle · Oct 22')}><Icon name="bell" /><span className="dot" /></button>
+          <button className="iconbtn" onClick={() => toast('🔔', 'Aesha posted a new event', 'Leadership Circle · Oct 22')}><Icon name="bell" /><span className="dot" /></button>
           <button onClick={() => tab('profile')}><Avatar id={me} size={40} /></button>
         </div>
       </div>
@@ -68,7 +68,7 @@ export default function Discover() {
       {!filtering && <>
         <div className="h-sec"><h3>Recommended for you</h3></div>
         <button className="featured" onClick={() => go('event', { id: featured.id })}>
-          <small>{me === 'yuri' ? 'Matches your goal: Restart career' : 'Your upcoming event'}</small>
+          <small>{me === 'shirley' ? 'Matches your goal: Grow into leadership' : 'Your upcoming event'}</small>
           <h3>{featured.title}</h3>
           <p>{fmtDate(featured.date)} · {featured.time} · {featured.going} moms going</p>
         </button>

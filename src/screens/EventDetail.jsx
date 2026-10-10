@@ -9,7 +9,7 @@ export default function EventDetail() {
   const host = person(e.host)
   const going = prog().regs.includes(e.id), mine = e.host === me, left = e.cap - e.going
   const conn = prog().conns[e.host]
-  const attendees = ['maria', 'dana', 'aisha', 'jen', 'priya', 'lauren'].filter(x => x !== e.host && x !== me).slice(0, 4)
+  const attendees = ['maria', 'dana', 'nia', 'jen', 'priya', 'lauren'].filter(x => x !== e.host && x !== me).slice(0, 4)
   const online = e.format === 'Online'
 
   let hostAction = null

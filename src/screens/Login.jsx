@@ -2,7 +2,7 @@ import { useApp } from '../store.jsx'
 import Avatar from '../components/Avatar.jsx'
 import Constellation from '../components/Constellation.jsx'
 
-const PERSONA_GOALS = { yuri: 'Wants to upskill & restart her career', pauline: 'Experienced — ready to mentor' }
+const PERSONA_GOALS = { shirley: 'Product manager — growing her career with a 5-year-old', aesha: 'CTO — ready to mentor & share' }
 
 export default function Login() {
   const { person, signIn } = useApp()
@@ -16,14 +16,14 @@ export default function Login() {
         </div>
         <h1>Every mom's <em>next chapter</em> starts with her people.</h1>
         <p className="muted" style={{ fontSize: 15, lineHeight: 1.5, marginBottom: 22 }}>
-          Connect with stay-at-home and working moms near you. Learn new skills, share what you know, and grow together.
+          Connect with working moms near you. Learn new skills, share what you know, and grow together.
         </p>
-        <div className="field"><label>Email</label><input className="input" defaultValue="yuri.k@email.com" /></div>
+        <div className="field"><label>Email</label><input className="input" defaultValue="shirley@email.com" /></div>
         <div className="field"><label>Password</label><input className="input" type="password" defaultValue="demopass" /></div>
-        <button className="btn primary" onClick={() => signIn('yuri')}>Sign in</button>
-        <button className="btn ghost" style={{ marginTop: 10 }} onClick={() => signIn('yuri')}><b style={{ color: '#4285f4' }}>G</b> Continue with Google</button>
+        <button className="btn primary" onClick={() => signIn('shirley')}>Sign in</button>
+        <button className="btn ghost" style={{ marginTop: 10 }} onClick={() => signIn('shirley')}><b style={{ color: '#4285f4' }}>G</b> Continue with Google</button>
         <div className="divider">or explore as a demo persona</div>
-        {['yuri', 'pauline'].map(id => {
+        {['shirley', 'aesha'].map(id => {
           const p = person(id)
           return (
             <button key={id} className="card persona" onClick={() => signIn(id)}>

@@ -10,10 +10,10 @@ export default function Profile() {
   const communities = pr.joined.length + S.customGroups.filter(g => g.members.includes(me)).length
   // Weekly goals compare against each persona's starting point so they tick off during the demo.
   const goals = [
-    { t: 'Sign up for an event', ok: pr.regs.length > (me === 'yuri' ? 0 : 1) },
+    { t: 'Sign up for an event', ok: pr.regs.length > (me === 'shirley' ? 0 : 1) },
     { t: 'Message a mom 1:1 or in a group', ok: pr.badges.includes('ice') && Object.values(S.threads).some(t => t.some(m => m.from === me && m.t === 'now')) },
-    { t: 'Make a new connection', ok: conns > (me === 'yuri' ? 1 : 3) },
-    { t: 'Join a new community', ok: communities > (me === 'yuri' ? 1 : 3) }
+    { t: 'Make a new connection', ok: conns > (me === 'shirley' ? 1 : 3) },
+    { t: 'Join a new community', ok: communities > (me === 'shirley' ? 1 : 3) }
   ]
 
   function onPhoto(e) {

@@ -1,6 +1,6 @@
 # NextChapter
 
-A community app where stay-at-home moms and working moms connect, learn new skills, and grow together. This repo holds our hackathon prototype.
+A community app where working moms connect, learn new skills, and grow together. This repo holds our hackathon prototype.
 
 **Tech stack:** React 18 + Vite, Three.js (via React Three Fiber) for the 3D community network, plain CSS.
 
@@ -51,8 +51,8 @@ All data is in memory. Refresh the page or click "Reset demo data" to start over
 
 ## Demo path
 
-1. Sign in as **Yuri**. Search "resume", open Pauline's workshop and sign up (a badge unlocks).
-2. Connect with Pauline, then send her a DM.
+1. Sign in as **Shirley**. Search "leadership", open Aesha's workshop and sign up (a badge unlocks).
+2. Connect with Aesha, then send her a DM.
 3. Join a community and create a custom group.
 4. Check Profile progress and badges.
-5. Sign out, sign in as **Pauline** and host an event.
+5. Sign out, sign in as **Aesha** and host an event.

@@ -39,16 +39,16 @@ function SidePanel() {
   return (
     <div className="side">
       <h1>NextChapter</h1>
-      <p>A community where stay-at-home moms and working moms connect, learn from each other, and grow together.</p>
+      <p>A community where working moms connect, learn from each other, and grow together.</p>
       <div className="steps">
         <b>Demo path</b><br />
-        1. Sign in as <b>Yuri</b><br />
-        2. Search "resume", filter, open event<br />
+        1. Sign in as <b>Shirley</b><br />
+        2. Search "leadership", filter, open event<br />
         3. Sign up → earn a badge<br />
-        4. Connect with Pauline &amp; send a DM<br />
+        4. Connect with Aesha &amp; send a DM<br />
         5. Join a community, make a custom group<br />
         6. Check profile progress &amp; badges<br />
-        7. Sign out, sign in as <b>Pauline</b> → create an event
+        7. Sign out, sign in as <b>Aesha</b> → create an event
       </div>
       <button className="reset" onClick={resetDemo}>Reset demo data</button>
     </div>

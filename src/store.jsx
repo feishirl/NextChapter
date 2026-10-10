@@ -15,12 +15,12 @@ const fresh = () => ({ S: seed(), me: null, view: { name: 'login' }, stack: [], 
 
 const GROUP_REPLIES = ["Welcome! So happy you're here 💜", "Hi! You'll love this group.", 'Welcome!! Check the pinned post for upcoming meetups 😊', "Yes! A few of us are going — let's sit together."]
 const DM_REPLIES = {
-  pauline: ["Hi Yuri! So glad you reached out 😊 Bring whatever draft you have to Tuesday's workshop — we'll make it shine.", "Absolutely. Happy to do a 20-min call next week — I've been exactly where you are."],
-  yuri: ['Thank you so much, Pauline! That means a lot 💜', "I'd love that — I'll bring my resume draft!"],
-  jen: ['Yes!! Same bench by the zoo? ☕'], aisha: ['Happy to share my data analytics roadmap!'], dana: ['Haha twin life — always up for coffee!'],
+  aesha: ["Hi Shirley! So glad you reached out 😊 Bring your questions to Tuesday's workshop — we'll dig into them together.", "Absolutely. Happy to do a 20-min call next week — I've been exactly where you are."],
+  shirley: ['Thank you so much, Aesha! That means a lot 💜', "I'd love that — I'll bring my questions!"],
+  jen: ['Yes!! Same bench by the zoo? ☕'], nia: ['Happy to share my data analytics roadmap!'], dana: ['Haha twin life — always up for coffee!'],
   maria: ['Count me in!'], lauren: ['Love this group 💜'], priya: ["You've got this — DM me anytime!"]
 }
-const GROUP_MEMBERS = ['maria', 'dana', 'aisha', 'jen', 'lauren', 'priya']
+const GROUP_MEMBERS = ['maria', 'dana', 'nia', 'jen', 'lauren', 'priya']
 
 export function AppProvider({ children }) {
   const ref = useRef(null)
@@ -49,8 +49,8 @@ export function AppProvider({ children }) {
     if (a.city === b.city) { reasons.push(['sage', '📍 Both in ' + b.city]); score += 15 }
     a.hobbies.filter(h => b.hobbies.includes(h)).forEach(h => { reasons.push(['plum', '❤️ ' + h]); score += 8 })
     if (a.kidAges.some(x => b.kidAges.some(y => Math.abs(x - y) <= 2))) { reasons.push(['gold', '👶 Kids similar age']); score += 12 }
-    if (st.me === 'yuri' && /data|analyst|software|HR/i.test(b.career)) { reasons.push(['coral', '🎯 Can help with your career goal']); score += 10 }
-    if (st.me === 'pauline' && b.situation === 'Stay-at-home mom') { reasons.push(['coral', '🌱 Looking for a mentor']); score += 10 }
+    if (st.me === 'shirley' && /software|engineer|data|analyst|CTO/i.test(b.career)) { reasons.push(['coral', '🎯 Can help with your career goal']); score += 10 }
+    if (st.me === 'aesha' && b.age < 40) { reasons.push(['coral', '🌱 Could use a mentor']); score += 10 }
     return { score: Math.min(score, 98), reasons }
   }
 
@@ -84,7 +84,7 @@ export function AppProvider({ children }) {
   /* ---- auth ---- */
   function signIn(id) {
     mutate(s => { s.me = id; s.stack = []; s.view = { name: 'discover' }; s.viewKey++ })
-    setTimeout(() => toast('👋', `Welcome back, ${firstName(id)}!`, id === 'yuri' ? '🔥 3-day streak — keep it going' : 'You have 1 new connection request'), 300)
+    setTimeout(() => toast('👋', `Welcome back, ${firstName(id)}!`, id === 'shirley' ? '🔥 3-day streak — keep it going' : 'You have 1 new connection request'), 300)
   }
   const signOut = () => mutate(s => { s.me = null; s.stack = []; s.view = { name: 'login' }; s.viewKey++ })
   const resetDemo = () => { ref.current = fresh(); setToastState(null); force() }
