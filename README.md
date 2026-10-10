@@ -56,3 +56,4 @@ All data is in memory. Refresh the page or click "Reset demo data" to start over
 3. Join a community and create a custom group.
 4. Check Profile progress and badges.
 5. Sign out, sign in as **Aesha** and host an event.
+
