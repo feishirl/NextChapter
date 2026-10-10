@@ -2,36 +2,52 @@
 
 A community app where stay-at-home moms and working moms connect, learn new skills, and grow together. This repo holds our hackathon prototype.
 
+**Tech stack:** React 18 + Vite, Three.js (via React Three Fiber) for the 3D community network, plain CSS.
+
 ## Run it
 
-It's a single file with no build step. Open `index.html` in Chrome, or serve the folder:
+You need [Node.js](https://nodejs.org) 18 or newer.
 
 ```bash
-python -m http.server 5173
+npm install
+npm run dev
 ```
 
-Then visit http://localhost:5173.
+Then open http://localhost:5173.
 
-## What's in the prototype
+- **Laptop:** the app shows inside a phone mockup that scales to fit your window, with the demo script beside it.
+- **Real phone:** open the same URL (or the deployed link) and the app fills the whole screen.
 
-1. **Log-in:** email/Google sign-in, or one-tap demo personas (Yuri and Pauline)
-2. **Discover:** search, category chips, filters (format, location, skill level, kid-friendly)
-3. **Event details + sign-up form**
-4. **Create event:** the coral + button (skill level, format, date, capacity)
-5. **Chat:** communities (career, location, children's age, women's age, hobby), custom groups, 1:1 DMs
-6. **Profile:** photo, bio, career, kids, hobbies, progress tracker (XP, levels, weekly goals, badges)
-7. **Connect:** suggested moms with match reasons, requests, "My circle"
+To make a production build, run `npm run build` (the output goes to `dist/`). The project deploys to Vercel as-is.
+
+## Project structure
+
+```
+src/
+  data.js            demo data: people, events, communities, starter chats, badges
+  store.jsx          shared app state and actions (navigation, sign-up, chat, XP and badges)
+  App.jsx            picks which screen to show
+  styles.css         all styles (colors are CSS variables at the top)
+  components/        reusable pieces: Avatar, Icon, NavBar, PhoneFrame, Constellation (3D), ...
+  screens/           one file per page
+    Login.jsx        1. Log-in (with the 3D hero)
+    Discover.jsx     2. Events and programs: search and filters
+    EventDetail.jsx  3. Event details
+    Signup.jsx       3. Sign-up form
+    Success.jsx      3. "You're in!" confirmation
+    CreateEvent.jsx  4. Host an event (skill level, format, ...)
+    Chat.jsx         5. Communities, my groups, direct messages
+    Thread.jsx       5. A single conversation
+    Profile.jsx      6. Profile, progress tracker, badges
+    EditProfile.jsx  6. Edit profile
+    Connect.jsx      7. Suggested moms, requests, my circle
+    PersonView.jsx   7. Another mom's profile
+legacy/prototype.html   the original single-file version
+```
+
+**Working as a team:** each page is its own file, so split the work by page to avoid merge conflicts. Run `git pull` before you start and push as soon as you're done.
 
 All data is in memory. Refresh the page or click "Reset demo data" to start over.
-
-## Editing guide
-
-Everything lives in `index.html`:
-
-- **Styles:** the `<style>` block. The colors are CSS variables at the top (`--plum`, `--coral`, ...).
-- **Demo data:** the `seed()` function (people, events, communities, starter chat messages).
-- **Screens:** one function per page (`login`, `discover`, `eventDetail`, `signup`, `create`, `chat`, `thread`, `profile`, `editProfile`, `connect`, `viewPerson`).
-- **Badges and XP:** `BADGES`, `LEVELS` and `award()`.
 
 ## Demo path
 
