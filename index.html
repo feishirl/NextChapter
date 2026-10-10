@@ -243,16 +243,16 @@ textarea.input{height:auto;min-height:84px;padding:12px 14px;resize:none;line-he
 
 <div class="side">
   <h1>NextChapter</h1>
-  <p>A community where stay-at-home moms and working moms connect, learn from each other, and grow together.</p>
+  <p>A community where working moms connect, learn from each other, and grow together.</p>
   <div class="steps">
     <b>Demo path</b><br>
-    1. Sign in as <b>Yuri</b><br>
-    2. Search "resume", filter, open event<br>
+    1. Sign in as <b>Shirley</b><br>
+    2. Search "leadership", filter, open event<br>
     3. Sign up &rarr; earn a badge<br>
-    4. Connect with Pauline &amp; send a DM<br>
+    4. Connect with Aesha &amp; send a DM<br>
     5. Join a community, make a custom group<br>
     6. Check profile progress &amp; badges<br>
-    7. Sign out, sign in as <b>Pauline</b> &rarr; create an event
+    7. Sign out, sign in as <b>Aesha</b> &rarr; create an event
   </div>
   <button class="reset" onclick="resetDemo()">Reset demo data</button>
 </div>
@@ -300,32 +300,32 @@ const COLORS = ['#7a3b7d','#e8735a','#4f8a6e','#d9a23a','#4a6fa5','#b0577a','#6b
 function seed(){
   return {
     people: {
-      yuri:   {id:'yuri', name:'Yuri K.', age:35, city:'Chicago', hood:'Lakeview', color:'#e8735a', photo:null,
-               situation:'Stay-at-home mom', career:'Former marketing coordinator · learning data analytics',
-               kids:'1 daughter (3 yrs)', kidAges:[3], hobbies:['Yoga','Baking','Podcasts'],
-               interests:['Upskill','Career'],
-               bio:"Stay-at-home mom to a curious 3-year-old. Ready to start my next chapter — learning data analytics and looking for moms who've made the leap back to work."},
-      pauline:{id:'pauline', name:'Pauline M.', age:46, city:'Oak Park', hood:'Oak Park', color:'#7a3b7d', photo:null,
-               situation:'Working mom', career:'HR Director · 18 yrs in talent & recruiting',
-               kids:'2 kids (11 & 15)', kidAges:[11,15], hobbies:['Running','Book club','Gardening'],
-               interests:['Mentoring','Career'],
-               bio:"Working mom of two. I've hired hundreds of people and returned to work twice myself — happy to help moms polish resumes and negotiate with confidence."},
-      aisha:  {id:'aisha', name:'Aisha R.', age:33, city:'Chicago', career:'Data analyst at a health-tech startup', kids:'2 kids (2 & 5)', kidAges:[2,5], hobbies:['Yoga','Podcasts'], color:'#4f8a6e', situation:'Working mom'},
+      shirley:{id:'shirley', name:'Shirley', age:37, city:'Chicago', hood:'Lakeview', color:'#e8735a', photo:null,
+               situation:'Working mom', career:'Product Manager at a tech company',
+               kids:'1 son (5 yrs)', kidAges:[5], hobbies:['Yoga','Baking','Podcasts'],
+               interests:['Career','Upskill'],
+               bio:"Product manager and mom to an energetic 5-year-old. I love my career and my kid, and I'm looking for moms who've grown into leadership while raising a family."},
+      aesha:  {id:'aesha', name:'Aesha', age:44, city:'Oak Park', hood:'Oak Park', color:'#7a3b7d', photo:null,
+               situation:'Working mom', career:'CTO at a fashion-tech company',
+               kids:'1 son (11), 1 daughter (15)', kidAges:[11,15], hobbies:['Running','Book club','Gardening'],
+               interests:['Mentoring','Leadership'],
+               bio:"CTO and mom of two. I've built teams and raised kids at the same time, and I'm happy to share what I've learned about leading in tech without giving up family time."},
+      nia:  {id:'nia', name:'Nia R.', age:33, city:'Chicago', career:'Data analyst at a health-tech startup', kids:'2 kids (2 & 5)', kidAges:[2,5], hobbies:['Yoga','Podcasts'], color:'#4f8a6e', situation:'Working mom'},
       maria:  {id:'maria', name:'Maria G.', age:38, city:'Evanston', career:'Pediatric nurse, part-time', kids:'1 son (4 yrs)', kidAges:[4], hobbies:['Baking','Gardening'], color:'#d9a23a', situation:'Working mom'},
       jen:    {id:'jen', name:'Jen L.', age:34, city:'Chicago', career:'Freelance graphic designer', kids:'1 son (2 yrs)', kidAges:[2], hobbies:['Crafts','Yoga'], color:'#4a6fa5', situation:'Working mom'},
       priya:  {id:'priya', name:'Priya S.', age:41, city:'Naperville', career:'Senior software engineer', kids:'2 kids (1 & 7)', kidAges:[1,7], hobbies:['Running','Book club'], color:'#b0577a', situation:'Working mom'},
-      dana:   {id:'dana', name:'Dana W.', age:37, city:'Oak Park', career:'Stay-at-home mom · ex-accountant', kids:'Twins (3 yrs)', kidAges:[3,3], hobbies:['Baking','Podcasts','Running'], color:'#6b5ca5', situation:'Stay-at-home mom'},
+      dana:   {id:'dana', name:'Dana W.', age:37, city:'Oak Park', career:'Accountant, part-time', kids:'Twins (3 yrs)', kidAges:[3,3], hobbies:['Baking','Podcasts','Running'], color:'#6b5ca5', situation:'Working mom'},
       lauren: {id:'lauren', name:'Lauren T.', age:49, city:'Chicago', career:'High school teacher', kids:'1 daughter (16)', kidAges:[16], hobbies:['Book club','Gardening'], color:'#3f8f8f', situation:'Working mom'}
     },
     progress: {
-      yuri:   {xp:320, badges:['welcome','streak3'], regs:[], joined:['g_toddler'], conns:{jen:'connected', aisha:'incoming'}},
-      pauline:{xp:1240, badges:['welcome','streak3','first_event','ice','circle','community','host','mentor'], regs:['e7'], joined:['g_40plus','g_book','g_west'], conns:{dana:'connected', lauren:'connected', maria:'connected', priya:'incoming'}}
+      shirley:   {xp:320, badges:['welcome','streak3'], regs:[], joined:['g_toddler'], conns:{jen:'connected', nia:'incoming'}},
+      aesha:{xp:1240, badges:['welcome','streak3','first_event','ice','circle','community','host','mentor'], regs:['e7'], joined:['g_40plus','g_book','g_west'], conns:{dana:'connected', lauren:'connected', maria:'connected', priya:'incoming'}}
     },
     events: [
-      {id:'e1', title:'Resume Refresh: Returning After a Career Break', host:'pauline', cat:'Career', level:'Beginner', format:'Online', city:'Online', date:'2026-10-13', time:'7:30 PM', dur:'90 min', cap:25, going:18, kid:true, emoji:'📄', bg:'#fde9e3',
-       desc:"Turn your career gap into a strength. We'll rewrite your summary, frame caregiving years with confidence, and do live resume reviews in small breakout rooms.",
-       learn:['How to explain a career gap in one sentence','Translating mom skills into resume bullets','Live 1:1 feedback from a hiring manager']},
-      {id:'e2', title:'Intro to Data Analytics with Excel', host:'aisha', cat:'Upskill', level:'Beginner', format:'Online', city:'Online', date:'2026-10-14', time:'1:00 PM', dur:'60 min', cap:40, going:31, kid:true, emoji:'📊', bg:'#e3eef8',
+      {id:'e1', title:'Breaking into Tech Leadership', host:'aesha', cat:'Career', level:'Beginner', format:'Online', city:'Online', date:'2026-10-13', time:'7:30 PM', dur:'90 min', cap:25, going:18, kid:true, emoji:'🚀', bg:'#fde9e3',
+       desc:"How to move from individual contributor to leader in tech while raising a family. Aesha shares how she went from engineer to CTO, with Q&A in small breakout rooms.",
+       learn:['The skills that make a tech leader','Setting boundaries between work and family','Live Q&A with a CTO']},
+      {id:'e2', title:'Intro to Data Analytics with Excel', host:'nia', cat:'Upskill', level:'Beginner', format:'Online', city:'Online', date:'2026-10-14', time:'1:00 PM', dur:'60 min', cap:40, going:31, kid:true, emoji:'📊', bg:'#e3eef8',
        desc:'A nap-time friendly crash course on pivot tables, charts, and cleaning data — the first step toward an analytics career.',
        learn:['Pivot tables in 10 minutes','Building your first dashboard','Free resources to keep going']},
       {id:'e3', title:'Stroller Walk & Talk — Lincoln Park', host:'jen', cat:'Wellness', level:'All levels', format:'In person', city:'Chicago', date:'2026-10-15', time:'10:00 AM', dur:'60 min', cap:15, going:9, kid:true, emoji:'🌳', bg:'#e3f1ea',
@@ -340,9 +340,9 @@ function seed(){
       {id:'e6', title:'LinkedIn Profile Glow-Up', host:'priya', cat:'Upskill', level:'Beginner', format:'Online', city:'Online', date:'2026-10-20', time:'12:00 PM', dur:'45 min', cap:50, going:27, kid:true, emoji:'✨', bg:'#e8eefb',
        desc:'Headline, about section, and skills — get recruiters finding you again.',
        learn:['Headline formulas that work','Using the "Career break" feature','Getting recommendations']},
-      {id:'e7', title:'Leadership Circle for Returning Managers', host:'pauline', cat:'Career', level:'Advanced', format:'In person', city:'Oak Park', date:'2026-10-22', time:'7:00 PM', dur:'90 min', cap:10, going:7, kid:false, emoji:'🧭', bg:'#ece6f7',
-       desc:'A small peer circle for moms stepping back into management roles. Bring a real challenge; leave with a plan.',
-       learn:['Negotiating flexible schedules','Leading teams after time away','Peer coaching']},
+      {id:'e7', title:'Leadership Circle for Women in Tech', host:'aesha', cat:'Career', level:'Advanced', format:'In person', city:'Oak Park', date:'2026-10-22', time:'7:00 PM', dur:'90 min', cap:10, going:7, kid:false, emoji:'🧭', bg:'#ece6f7',
+       desc:'A small peer circle for moms in tech management roles. Bring a real challenge; leave with a plan.',
+       learn:['Negotiating flexible schedules','Leading teams while parenting','Peer coaching']},
       {id:'e8', title:'Toddler Playdate + Coffee', host:'dana', cat:'Social', level:'All levels', format:'In person', city:'Oak Park', date:'2026-10-24', time:'9:30 AM', dur:'2 hrs', cap:20, going:12, kid:true, emoji:'🧸', bg:'#fdeee3',
        desc:'Indoor play space for kids 1–4, coffee and pastries for the grown-ups.',
        learn:['Kids 1–4 welcome','Snacks provided']}
@@ -364,13 +364,13 @@ function seed(){
     ],
     threads: {
       'g_toddler':[{from:'dana',t:'Yesterday',txt:'Anyone have tips for a toddler who suddenly hates naps? 😩'},{from:'jen',t:'Yesterday',txt:'We moved nap 30 min later and it helped a ton!'},{from:'maria',t:'9:12 AM',txt:'Also: quiet time with books counts as a win in my house 😂'}],
-      'g_return':[{from:'pauline',t:'Yesterday',txt:"Reminder: my resume workshop is Tuesday — bring a draft, no matter how rough!"},{from:'priya',t:'8:40 AM',txt:'Just got an offer after 4 years home. You all helped me so much 💜'}],
-      'g_tech':[{from:'aisha',t:'Yesterday',txt:'Sharing my favorite free SQL course in the files tab 👀'}],
-      'g_40plus':[{from:'lauren',t:'Yesterday',txt:'Who else is juggling teens AND aging parents this fall?'},{from:'pauline',t:'Yesterday',txt:'Raising my hand. Coffee this week?'}],
+      'g_return':[{from:'aesha',t:'Yesterday',txt:"Reminder: my leadership workshop is Tuesday — bring a question, no matter how big or small!"},{from:'priya',t:'8:40 AM',txt:'Just got promoted to Director! You all helped me so much 💜'}],
+      'g_tech':[{from:'nia',t:'Yesterday',txt:'Sharing my favorite free SQL course in the files tab 👀'}],
+      'g_40plus':[{from:'lauren',t:'Yesterday',txt:'Who else is juggling teens AND aging parents this fall?'},{from:'aesha',t:'Yesterday',txt:'Raising my hand. Coffee this week?'}],
       'g_book':[{from:'lauren',t:'Mon',txt:"October pick: 'Lessons in Chemistry' — meeting on the 28th!"}],
       'g_west':[{from:'dana',t:'Sun',txt:'Pumpkin patch meetup Saturday, who is in? 🎃'}],
-      'dm:jen|yuri':[{from:'jen',t:'Wed',txt:'So fun meeting you at the park! Same time next week?'},{from:'yuri',t:'Wed',txt:'Yes! Lily loved it 😊'}],
-      'dm:dana|pauline':[{from:'dana',t:'Tue',txt:'Thank you for the interview tips!!'}]
+      'dm:jen|shirley':[{from:'jen',t:'Wed',txt:'So fun meeting you at the park! Same time next week?'},{from:'shirley',t:'Wed',txt:'Yes! Leo loved it 😊'}],
+      'dm:aesha|dana':[{from:'dana',t:'Tue',txt:'Thank you for the leadership tips!!'}]
     },
     customGroups: [],
     nextId: 100
@@ -461,20 +461,20 @@ function login(){
   return `<div class="screen nonav"><div class="login">
     <div class="logo"><div class="mark">❦</div>NextChapter</div>
     <h1>Every mom's <em>next chapter</em> starts with her people.</h1>
-    <p class="muted" style="font-size:15px;line-height:1.5;margin-bottom:26px">Connect with stay-at-home and working moms near you. Learn new skills, share what you know, and grow together.</p>
-    <div class="field"><label>Email</label><input class="input" id="em" value="yuri.k@email.com"></div>
+    <p class="muted" style="font-size:15px;line-height:1.5;margin-bottom:26px">Connect with working moms near you. Learn new skills, share what you know, and grow together.</p>
+    <div class="field"><label>Email</label><input class="input" id="em" value="shirley@email.com"></div>
     <div class="field"><label>Password</label><input class="input" type="password" value="demopass"></div>
-    <button class="btn primary" onclick="signIn('yuri')">Sign in</button>
-    <button class="btn ghost" style="margin-top:10px" onclick="signIn('yuri')"><b style="color:#4285f4">G</b> Continue with Google</button>
+    <button class="btn primary" onclick="signIn('shirley')">Sign in</button>
+    <button class="btn ghost" style="margin-top:10px" onclick="signIn('shirley')"><b style="color:#4285f4">G</b> Continue with Google</button>
     <div class="divider">or explore as a demo persona</div>
-    ${['yuri','pauline'].map(id=>{const p=person(id);return `<button class="card persona" onclick="signIn('${id}')">${avatar(id,46)}
+    ${['shirley','aesha'].map(id=>{const p=person(id);return `<button class="card persona" onclick="signIn('${id}')">${avatar(id,46)}
       <div style="flex:1"><b>${p.name}, ${p.age}</b><div class="muted" style="font-size:12px;margin-top:2px">${p.situation} · ${p.kids}</div>
-      <div style="font-size:12px;color:var(--plum-2);margin-top:2px;font-weight:600">${id==='yuri'?'Wants to upskill & restart her career':'Experienced — ready to mentor'}</div></div></button>`}).join('')}
+      <div style="font-size:12px;color:var(--plum-2);margin-top:2px;font-weight:600">${id==='shirley'?'Product manager — growing her career with a 5-year-old':'CTO — ready to mentor & share'}</div></div></button>`}).join('')}
     <p class="faint" style="font-size:12px;text-align:center;margin-top:12px">New here? <b style="color:var(--plum)">Create an account</b></p>
   </div></div>`;
 }
 function signIn(id){ me = id; stack=[]; view={name:'discover'}; render(true);
-  setTimeout(()=>toast('👋', `Welcome back, ${firstName(id)}!`, id==='yuri'?'🔥 3-day streak — keep it going':'You have 1 new connection request'), 300); }
+  setTimeout(()=>toast('👋', `Welcome back, ${firstName(id)}!`, id==='shirley'?'🔥 3-day streak — keep it going':'You have 1 new connection request'), 300); }
 function signOut(){ me=null; stack=[]; view={name:'login'}; render(true); }
 
 /* 2. DISCOVER */
@@ -503,13 +503,13 @@ function discover(){
   const evs = filteredEvents(); const p = person(me);
   const cats = ['All','Career','Upskill','Wellness','Hobby','Social'];
   const activeFilters = [ui.format,ui.city,ui.level].filter(x=>x!=='All').length + (ui.kidOnly?1:0);
-  const featured = S.events.find(e=>e.id===(me==='yuri'?'e1':'e7'));
+  const featured = S.events.find(e=>e.id===(me==='shirley'?'e1':'e7'));
   const hour = 19, greet = hour<12?'Good morning':hour<17?'Good afternoon':'Good evening';
   const sel = (key, opts) => `<select onchange="ui.${key}=this.value;render()">${opts.map(o=>`<option ${ui[key]===o?'selected':''}>${o}</option>`).join('')}</select>`;
   const filtering = ui.q || ui.cat!=='All' || activeFilters;
   return `<div class="screen">
     <div class="topbar"><div><div class="muted" style="font-size:13px">${greet},</div><h2>${esc(firstName(me))} 👋</h2></div>
-      <div style="display:flex;gap:8px"><button class="iconbtn" onclick="toast('🔔','Pauline posted a new event','Leadership Circle · Oct 22')">${ic('bell')}<span class="dot"></span></button>
+      <div style="display:flex;gap:8px"><button class="iconbtn" onclick="toast('🔔','Aesha posted a new event','Leadership Circle · Oct 22')">${ic('bell')}<span class="dot"></span></button>
       <button onclick="tab('profile')">${avatar(me,40)}</button></div></div>
     <div class="search">${ic('search')}<input id="q" placeholder="Search events, skills, hosts…" value="${esc(ui.q)}" oninput="ui.q=this.value;renderKeepFocus('q')">
       <button class="iconbtn" style="width:36px;height:36px;border:none;background:${activeFilters?'var(--plum)':'var(--plum-soft)'};color:${activeFilters?'#fff':'var(--plum)'}" onclick="ui.showFilters=!ui.showFilters;render()">${ic('sliders')}</button></div>
@@ -520,7 +520,7 @@ function discover(){
       <button class="btn sm ghost" style="width:100%" onclick="Object.assign(ui,{format:'All',city:'All',level:'All',kidOnly:false,cat:'All',q:''});render()">Clear all filters</button></div>`:''}
     <div class="chips">${cats.map(c=>`<button class="chip ${ui.cat===c?'on':''}" onclick="ui.cat='${c}';render()">${c}</button>`).join('')}</div>
     ${!filtering?`<div class="h-sec"><h3>Recommended for you</h3></div>
-      <button class="featured" onclick="go('event',{id:'${featured.id}'})"><small>${me==='yuri'?'Matches your goal: Restart career':'Your upcoming event'}</small>
+      <button class="featured" onclick="go('event',{id:'${featured.id}'})"><small>${me==='shirley'?'Matches your goal: Grow into leadership':'Your upcoming event'}</small>
       <h3>${esc(featured.title)}</h3><p>${fmtDate(featured.date)} · ${featured.time} · ${featured.going} moms going</p></button>`:''}
     <div class="h-sec"><h3>${filtering?'Results':'Upcoming events & programs'}</h3><span>${evs.length} found</span></div>
     ${evs.length?evs.map(evCard).join(''):`<div class="empty"><div>🔍</div>No events match. Try clearing a filter — or <b style="color:var(--plum);cursor:pointer" onclick="tab('create')">host one yourself</b>!</div>`}
@@ -536,7 +536,7 @@ function eventDetail(){
   const e = S.events.find(x=>x.id===view.id); const h = person(e.host);
   const reg = prog().regs.includes(e.id), mine = e.host===me, left = e.cap-e.going;
   const conn = prog().conns[e.host];
-  const attendees = ['maria','dana','aisha','jen','priya','lauren'].filter(x=>x!==e.host && x!==me).slice(0,4);
+  const attendees = ['maria','dana','nia','jen','priya','lauren'].filter(x=>x!==e.host && x!==me).slice(0,4);
   return `<div class="screen nonav">
     <div class="hero" style="background:${e.bg}"><button class="iconbtn back" onclick="back()">${ic('back')}</button>${e.emoji}</div>
     <div class="detail">
@@ -571,7 +571,7 @@ function signup(){
       <div class="field"><label>Full name</label><input class="input" value="${esc(form.name)}" oninput="form.name=this.value">${form.err.name?`<div class="err">${form.err.name}</div>`:''}</div>
       <div class="field"><label>Email</label><input class="input" value="${esc(form.email)}" oninput="form.email=this.value">${form.err.email?`<div class="err">${form.err.email}</div>`:''}</div>
       <div class="field"><label>I am currently a…</label>
-        <select class="input" onchange="form.sit=this.value">${['Stay-at-home mom','Working mom','Returning to work','Student mom'].map(o=>`<option ${form.sit===o?'selected':''}>${o}</option>`).join('')}</select></div>
+        <select class="input" onchange="form.sit=this.value">${['Working mom','Returning to work','Student mom'].map(o=>`<option ${form.sit===o?'selected':''}>${o}</option>`).join('')}</select></div>
       <div class="field"><label>My experience with this topic</label><div class="radio-row">${r('exp','Beginner')}${r('exp','Some')}${r('exp','Experienced')}</div></div>
       <label class="check"><input type="checkbox" ${form.care?'checked':''} onchange="form.care=this.checked">My child may join me on camera / on-site</label>
       <div class="field"><label>Anything the host should know? <span class="faint">(optional)</span></label>
@@ -709,9 +709,9 @@ function thread(){
     <div class="composer"><input id="msg" placeholder="Write a message…" onkeydown="if(event.key==='Enter')sendMsg()"><button onclick="sendMsg()">${ic('send')}</button></div></div>`;
 }
 const REPLIES = {
-  pauline:["Hi Yuri! So glad you reached out 😊 Bring whatever draft you have to Tuesday's workshop — we'll make it shine.","Absolutely. Happy to do a 20-min call next week — I've been exactly where you are."],
-  yuri:["Thank you so much, Pauline! That means a lot 💜","I'd love that — I'll bring my resume draft!"],
-  jen:["Yes!! Same bench by the zoo? ☕"], aisha:["Happy to share my data analytics roadmap!"], dana:["Haha twin life — always up for coffee!"],
+  aesha:["Hi Shirley! So glad you reached out 😊 Bring your questions to Tuesday's workshop — we'll dig into them together.","Absolutely. Happy to do a 20-min call next week — I've been exactly where you are."],
+  shirley:["Thank you so much, Aesha! That means a lot 💜","I'd love that — I'll bring my questions!"],
+  jen:["Yes!! Same bench by the zoo? ☕"], nia:["Happy to share my data analytics roadmap!"], dana:["Haha twin life — always up for coffee!"],
   maria:["Count me in!"], lauren:["Love this group 💜"], priya:["You've got this — DM me anytime!"]
 };
 const GROUP_REPLIES = ["Welcome! So happy you're here 💜","Hi! You'll love this group.","Welcome!! Check the pinned post for upcoming meetups 😊","Yes! A few of us are going — let's sit together."];
@@ -720,7 +720,7 @@ function sendMsg(text){
   const key = view.key; (S.threads[key] ||= []).push({from:me, t:'now', txt});
   const first = !prog().badges.includes('ice');
   render(); if (first) award(20,'ice');
-  const responder = view.group ? ['maria','dana','aisha','jen','lauren','priya'].filter(x=>x!==me)[Math.floor(Math.random()*5)] : view.other;
+  const responder = view.group ? ['maria','dana','nia','jen','lauren','priya'].filter(x=>x!==me)[Math.floor(Math.random()*5)] : view.other;
   const sent = S.threads[key].filter(m=>m.from===me).length;
   const pool = view.group ? GROUP_REPLIES : (REPLIES[responder]||['💜']);
   setTimeout(()=>{ typing = {key, who:responder}; if (view.name==='thread'&&view.key===key) render(); }, 700);
@@ -737,8 +737,8 @@ function profile(){
   const goals = [
     {t:'Sign up for an event', ok: pr.badges.includes('first_event') && pr.regs.length>0},
     {t:'Message a mom 1:1 or in a group', ok: pr.badges.includes('ice')},
-    {t:'Make a new connection', ok: conns>(me==='yuri'?1:3)},
-    {t:'Join a new community', ok: pr.joined.length>(me==='yuri'?1:3)}
+    {t:'Make a new connection', ok: conns>(me==='shirley'?1:3)},
+    {t:'Join a new community', ok: pr.joined.length>(me==='shirley'?1:3)}
   ];
   return `<div class="screen">
     <div class="cover"><div class="tools"><button class="iconbtn" onclick="go('editProfile')">${ic('edit')}</button><button class="iconbtn" onclick="signOut()">${ic('logout')}</button></div></div>
@@ -781,7 +781,7 @@ function editProfile(){
       <div class="field"><label>Name</label><input class="input" value="${esc(pf.name)}" oninput="pf.name=this.value"></div>
       <div class="row"><div class="field"><label>Neighborhood</label><input class="input" value="${esc(pf.hood)}" oninput="pf.hood=this.value"></div>
         <div class="field"><label>City</label><input class="input" value="${esc(pf.city)}" oninput="pf.city=this.value"></div></div>
-      <div class="field"><label>I am a…</label><select class="input" onchange="pf.situation=this.value">${['Stay-at-home mom','Working mom','Returning to work','Student mom'].map(o=>`<option ${pf.situation===o?'selected':''}>${o}</option>`).join('')}</select></div>
+      <div class="field"><label>I am a…</label><select class="input" onchange="pf.situation=this.value">${['Working mom','Returning to work','Student mom'].map(o=>`<option ${pf.situation===o?'selected':''}>${o}</option>`).join('')}</select></div>
       <div class="field"><label>Career</label><input class="input" value="${esc(pf.career)}" oninput="pf.career=this.value"></div>
       <div class="field"><label>Children</label><input class="input" value="${esc(pf.kids)}" oninput="pf.kids=this.value"></div>
       <div class="field"><label>Bio</label><textarea class="input" oninput="pf.bio=this.value">${esc(pf.bio)}</textarea></div>
@@ -799,8 +799,8 @@ function matchInfo(id){
   const shared = a.hobbies.filter(h=>b.hobbies.includes(h));
   shared.forEach(h=>{ reasons.push(['plum','❤️ '+h]); score += 8; });
   if (a.kidAges.some(x=>b.kidAges.some(y=>Math.abs(x-y)<=2))){ reasons.push(['gold','👶 Kids similar age']); score += 12; }
-  if (me==='yuri' && /data|analyst|software|HR/i.test(b.career)){ reasons.push(['coral','🎯 Can help with your career goal']); score += 10; }
-  if (me==='pauline' && b.situation==='Stay-at-home mom'){ reasons.push(['coral','🌱 Looking for a mentor']); score += 10; }
+  if (me==='shirley' && /software|engineer|data|analyst|CTO/i.test(b.career)){ reasons.push(['coral','🎯 Can help with your career goal']); score += 10; }
+  if (me==='aesha' && b.age<40){ reasons.push(['coral','🌱 Could use a mentor']); score += 10; }
   return {score:Math.min(score,98), reasons};
 }
 function connect(){
