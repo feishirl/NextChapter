@@ -224,6 +224,9 @@ textarea.input{height:auto;min-height:84px;padding:12px 14px;resize:none;line-he
 .person .top{display:flex;gap:12px;align-items:center}
 .match{font-size:12px;font-weight:700;color:var(--sage);background:var(--sage-soft);padding:4px 8px;border-radius:8px}
 .reasons{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 12px}
+.welcome-banner{display:flex;align-items:center;gap:12px;margin:0 20px 12px;padding:14px;width:calc(100% - 40px);background:linear-gradient(135deg,#fff6ee,#fbe9f3);border-color:#f1dbe4;color:var(--plum)}
+.welcome-banner b{font-size:14px;color:var(--ink)}
+.welcome-banner svg{transform:rotate(180deg)}
 
 /* overlays */
 .toast{position:absolute;top:8px;left:16px;right:16px;z-index:100;background:var(--ink);color:#fff;padding:12px 14px;border-radius:14px;display:flex;gap:12px;align-items:center;font-size:14px;box-shadow:0 10px 30px rgba(0,0,0,.25);animation:drop .35s ease}

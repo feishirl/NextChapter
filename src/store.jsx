@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer, useRef, useState } from 'react'
-import { seed, BADGES, lvl, levelName } from './data.js'
+import { seed, BADGES, PAST_EVENTS, lvl, levelName } from './data.js'
 
 // One in-memory store for the whole demo. Screens read from it via useApp()
 // and change it through the actions below; every change re-renders the app.
@@ -9,7 +9,7 @@ export const useApp = () => useContext(AppContext)
 
 const initialUi = () => ({
   q: '', cat: 'All', showFilters: false, format: 'All', city: 'All', level: 'All', kidOnly: false,
-  chatTab: 'groups', grpCat: 'All', connTab: 'suggested', connQ: ''
+  chatTab: 'groups', grpCat: 'All', connTab: 'suggested', connQ: '', connEvent: 'all'
 })
 const fresh = () => ({ S: seed(), me: null, view: { name: 'login' }, stack: [], viewKey: 0, ui: initialUi(), typing: null, sheet: null })
 
@@ -43,15 +43,17 @@ export function AppProvider({ children }) {
   const lastMsg = key => { const t = st.S.threads[key] || []; return t[t.length - 1] }
   const connected = () => Object.entries(prog().conns).filter(([, s]) => s === 'connected').map(([id]) => id)
 
+  // Why two moms might click: events they both went to come first, then location, hobbies and goals.
   function matchInfo(id) {
     const a = person(st.me), b = person(id), reasons = []
     let score = 55
-    if (a.city === b.city) { reasons.push(['sage', '📍 Both in ' + b.city]); score += 15 }
-    a.hobbies.filter(h => b.hobbies.includes(h)).forEach(h => { reasons.push(['plum', '❤️ ' + h]); score += 8 })
-    if (a.kidAges.some(x => b.kidAges.some(y => Math.abs(x - y) <= 2))) { reasons.push(['gold', '👶 Kids similar age']); score += 12 }
-    if (st.me === 'shirley' && /software|engineer|data|analyst|CTO/i.test(b.career)) { reasons.push(['coral', '🎯 Can help with your career goal']); score += 10 }
-    if (st.me === 'aesha' && b.age < 40) { reasons.push(['coral', '🌱 Could use a mentor']); score += 10 }
-    return { score: Math.min(score, 98), reasons }
+    const sharedEvents = PAST_EVENTS.filter(e => (a.attended || []).includes(e.id) && (b.attended || []).includes(e.id))
+    sharedEvents.forEach(e => { reasons.push(['gold', `${e.emoji} You both went to ${e.title}`]); score += 12 })
+    if (a.city === b.city) { reasons.push(['sage', '📍 Both in ' + b.city]); score += 10 }
+    a.hobbies.filter(h => b.hobbies.includes(h)).slice(0, 2).forEach(h => { reasons.push(['plum', '💜 Loves ' + h.toLowerCase()]); score += 6 })
+    if (st.me === 'shirley' && /software|engineer|data|analyst|CTO|owner/i.test(b.career)) { reasons.push(['coral', '🎯 Can help you grow']); score += 8 }
+    if (st.me === 'aesha' && b.age < 40) { reasons.push(['coral', '🌱 Could use a mentor']); score += 8 }
+    return { score: Math.min(score, 98), reasons, sharedEvents }
   }
 
   /* ---- feedback ---- */

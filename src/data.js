@@ -24,25 +24,41 @@ export const SITUATIONS = ['Working mom', 'Returning to work', 'Student mom']
 export const EVENT_CATEGORIES = ['Career', 'Upskill', 'Wellness', 'Hobby', 'Social']
 export const CITIES = ['Chicago', 'Evanston', 'Oak Park', 'Naperville']
 
+// Events that already happened. People who attended the same ones get matched on the Connect page.
+export const PAST_EVENTS = [
+  { id: 'p1', title: 'Mompreneur Brunch', emoji: '🥂', date: 'Sep 20' },
+  { id: 'p2', title: 'Confidence & Career Workshop', emoji: '💪', date: 'Sep 26' },
+  { id: 'p3', title: 'Sunday Yoga in the Park', emoji: '🧘', date: 'Oct 4' },
+  { id: 'p4', title: 'Bake & Mingle Night', emoji: '🧁', date: 'Oct 7' }
+]
+
 export function seed(){
   return {
     people: {
       shirley:{id:'shirley', name:'Shirley', age:37, city:'Chicago', hood:'Lakeview', color:'#e8735a', photo:null,
                situation:'Working mom', career:'Product Manager at a tech company',
                kids:'1 son (5 yrs)', kidAges:[5], hobbies:['Yoga','Baking','Podcasts'],
-               interests:['Career','Upskill'],
+               interests:['Career','Upskill'], attended:['p2','p3','p4'],
                bio:"Product manager and mom to an energetic 5-year-old. I love my career and my kid, and I'm looking for moms who've grown into leadership while raising a family."},
       aesha:  {id:'aesha', name:'Aesha', age:44, city:'Oak Park', hood:'Oak Park', color:'#7a3b7d', photo:null,
                situation:'Working mom', career:'CTO at a fashion-tech company',
                kids:'1 son (11), 1 daughter (15)', kidAges:[11,15], hobbies:['Running','Book club','Gardening'],
-               interests:['Mentoring','Leadership'],
+               interests:['Mentoring','Leadership'], attended:['p1','p2'],
                bio:"CTO and mom of two. I've built teams and raised kids at the same time, and I'm happy to share what I've learned about leading in tech without giving up family time."},
-      nia:  {id:'nia', name:'Nia R.', age:33, city:'Chicago', career:'Data analyst at a health-tech startup', kids:'2 kids (2 & 5)', kidAges:[2,5], hobbies:['Yoga','Podcasts'], color:'#4f8a6e', situation:'Working mom'},
-      maria:  {id:'maria', name:'Maria G.', age:38, city:'Evanston', career:'Pediatric nurse, part-time', kids:'1 son (4 yrs)', kidAges:[4], hobbies:['Baking','Gardening'], color:'#d9a23a', situation:'Working mom'},
-      jen:    {id:'jen', name:'Jen L.', age:34, city:'Chicago', career:'Freelance graphic designer', kids:'1 son (2 yrs)', kidAges:[2], hobbies:['Crafts','Yoga'], color:'#4a6fa5', situation:'Working mom'},
-      priya:  {id:'priya', name:'Priya S.', age:41, city:'Naperville', career:'Senior software engineer', kids:'2 kids (1 & 7)', kidAges:[1,7], hobbies:['Running','Book club'], color:'#b0577a', situation:'Working mom'},
-      dana:   {id:'dana', name:'Dana W.', age:37, city:'Oak Park', career:'Accountant, part-time', kids:'Twins (3 yrs)', kidAges:[3,3], hobbies:['Baking','Podcasts','Running'], color:'#6b5ca5', situation:'Working mom'},
-      lauren: {id:'lauren', name:'Lauren T.', age:49, city:'Chicago', career:'High school teacher', kids:'1 daughter (16)', kidAges:[16], hobbies:['Book club','Gardening'], color:'#3f8f8f', situation:'Working mom'}
+      nia:  {id:'nia', name:'Nia R.', age:33, city:'Chicago', career:'Data analyst at a health-tech startup', kids:'2 kids (2 & 5)', kidAges:[2,5], hobbies:['Yoga','Podcasts'], color:'#4f8a6e', situation:'Working mom', attended:['p2']},
+      maria:  {id:'maria', name:'Maria G.', age:38, city:'Evanston', career:'Pediatric nurse, part-time', kids:'1 son (4 yrs)', kidAges:[4], hobbies:['Baking','Gardening'], color:'#d9a23a', situation:'Working mom', attended:['p4']},
+      jen:    {id:'jen', name:'Jen L.', age:34, city:'Chicago', career:'Freelance graphic designer', kids:'1 son (2 yrs)', kidAges:[2], hobbies:['Crafts','Yoga'], color:'#4a6fa5', situation:'Working mom', attended:['p3']},
+      priya:  {id:'priya', name:'Priya S.', age:41, city:'Naperville', career:'Senior software engineer', kids:'2 kids (1 & 7)', kidAges:[1,7], hobbies:['Running','Book club'], color:'#b0577a', situation:'Working mom', attended:['p1','p2']},
+      dana:   {id:'dana', name:'Dana W.', age:37, city:'Oak Park', career:'Accountant, part-time', kids:'Twins (3 yrs)', kidAges:[3,3], hobbies:['Baking','Podcasts','Running'], color:'#6b5ca5', situation:'Working mom', attended:['p1','p4']},
+      lauren: {id:'lauren', name:'Lauren T.', age:49, city:'Chicago', career:'High school teacher', kids:'1 daughter (16)', kidAges:[16], hobbies:['Book club','Gardening'], color:'#3f8f8f', situation:'Working mom', attended:['p3']},
+      rosa:   {id:'rosa', name:'Rosa M.', age:39, city:'Chicago', career:'Owner of a neighborhood bakery', kids:'2 kids (6 & 9)', kidAges:[6,9], hobbies:['Baking','Cooking','Gardening'], color:'#c9733d', situation:'Working mom', attended:['p1','p4'],
+               bio:"I run a little bakery in Pilsen and I'm always up at 4am. Happy to talk small-business life, pricing and keeping your sanity."},
+      lily:   {id:'lily', name:'Lily C.', age:36, city:'Evanston', career:'Florist & wedding flower designer', kids:'1 daughter (4 yrs)', kidAges:[4], hobbies:['Gardening','Crafts','Photography'], color:'#c2577f', situation:'Working mom', attended:['p1','p3'],
+               bio:"Florist turned small-business owner. I love teaching flower arranging and helping moms turn a hobby into a side hustle."},
+      tasha:  {id:'tasha', name:'Tasha B.', age:34, city:'Chicago', career:'Personal trainer & fitness coach', kids:'1 son (3 yrs)', kidAges:[3], hobbies:['Running','Yoga','Cooking'], color:'#3f7f6a', situation:'Working mom', attended:['p3'],
+               bio:"Certified trainer who gets it: 20-minute workouts, nap-time sweat sessions, and lots of cheering each other on."},
+      gloria: {id:'gloria', name:'Gloria V.', age:45, city:'Oak Park', career:'Hair salon owner', kids:'2 kids (12 & 17)', kidAges:[12,17], hobbies:['Book club','Travel'], color:'#8a5a9e', situation:'Working mom', attended:['p1','p2'],
+               bio:"Running my own salon for 15 years. Ask me anything about being your own boss — and yes, I'll fix your bangs."}
     },
     progress: {
       shirley:   {xp:320, badges:['welcome','streak3'], regs:[], joined:['g_toddler'], conns:{jen:'connected', nia:'incoming'}},

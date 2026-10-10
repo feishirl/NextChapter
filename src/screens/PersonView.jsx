@@ -10,9 +10,9 @@ export default function PersonView() {
 
   let action
   if (s === 'connected') action = <button className="btn primary" onClick={() => openDM(id)}><Icon name="chat" /> Message</button>
-  else if (s === 'pending') action = <button className="btn pending">Request sent</button>
+  else if (s === 'pending') action = <button className="btn pending">💌 Request sent</button>
   else if (s === 'incoming') action = <button className="btn primary" onClick={() => accept(id)}>Accept request</button>
-  else action = <button className="btn primary" onClick={() => connectTo(id)}><Icon name="userplus" /> Connect</button>
+  else action = <button className="btn primary" onClick={() => connectTo(id)}>💜 Connect</button>
 
   return (
     <div className="screen nonav">
@@ -21,7 +21,7 @@ export default function PersonView() {
       </div>
       <div className="pf-head">
         <div className="pf-av"><Avatar id={id} size={104} /></div>
-        <h1>{p.name}, {p.age}</h1>
+        <h1>{p.name}</h1>
         <div className="muted" style={{ fontSize: 14 }}>{p.city} · {p.situation}</div>
         {p.bio && <p style={{ fontSize: 14, lineHeight: 1.5, marginTop: 10 }}>{p.bio}</p>}
         <div className="reasons">{m.reasons.map(([c, r]) => <span key={r} className={'tag ' + c}>{r}</span>)}</div>
@@ -30,10 +30,15 @@ export default function PersonView() {
       <div className="h-sec"><h3>About</h3></div>
       <div className="card about">
         <div className="r"><span className="ic"><Icon name="brief" sm /></span><span>{p.career}</span></div>
-        <div className="r"><span className="ic"><Icon name="smile" sm /></span><span>{p.kids}</span></div>
         <div className="r"><span className="ic"><Icon name="heart" sm /></span>
           <span style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>{p.hobbies.map(h => <span key={h} className="tag plum">{h}</span>)}</span></div>
       </div>
+      {m.sharedEvents.length > 0 && <>
+        <div className="h-sec"><h3>Events you both went to</h3></div>
+        <div className="card about">{m.sharedEvents.map(e => (
+          <div key={e.id} className="r"><span style={{ fontSize: 18 }}>{e.emoji}</span><span style={{ flex: 1 }}>{e.title}</span><span className="faint" style={{ fontSize: 12 }}>{e.date}</span></div>
+        ))}</div>
+      </>}
       {hosting.length > 0 && <><div className="h-sec"><h3>Hosting</h3></div>{hosting.map(e => <EventCard key={e.id} e={e} />)}</>}
     </div>
   )
